@@ -1,0 +1,99 @@
+body{
+    background-color: #faf3f4;
+}
+.wrapper{
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+input, .btn{
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.87);
+    box-shadow: 5px 5px 1px hsla(271, 69%, 15%, 0.274);
+    border: none;
+    border-radius: 5px;
+}
+
+input{
+    width: 100%;
+    position: relative;
+    text-align: right;
+
+    &:focus{
+    outline: 2px solid rgb(76, 175, 107);
+    box-shadow: 3px 3px 18px hsla(271, 69%, 15%, 0.5);
+    }
+
+    &::selection {
+        background: rgb(76, 175, 107);
+        color: #fff;
+    }
+}
+
+.label{
+    position: absolute;
+    top: -10px;
+    left: 4%;
+    z-index: 5;
+    color: white;
+    font-size: 14px;
+    padding: .3rem .5rem;
+    border-radius: 25px;
+
+    &--name{
+        background-color: tomato;
+    }
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+}
+
+.input-wrapper input {
+    padding-right: 30px;
+}
+
+.btn{
+    margin-bottom: 2rem;
+    background-color: rgba(182, 250, 203, 0.747);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1rem 1.5rem;
+    transition: .3s all ease-in-out;
+    cursor: pointer;
+
+    &:hover{
+    background-color: rgba(54, 75, 61, 0.747);
+    color: white;
+    }   
+}
+
+h1, h2, h3{
+    text-transform: uppercase;
+}
+
+h3{
+    font-size: 2em;
+    margin-bottom: 2rem;
+}
+
+h4{
+    font-size: 1.3em;
+}
+
+
+.hidden{
+    display: none;
+}
