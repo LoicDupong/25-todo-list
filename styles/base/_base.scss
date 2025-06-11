@@ -1,56 +1,106 @@
 body{
     background-color: #faf3f4;
+    background-image: url(https://ocrzia.github.io/03-task-list/img/bg.jpg);
+    background-position: center;
+    background-size: cover;
 }
 .wrapper{
-    max-width: 900px;
+    max-width: 1200px;
     margin: auto;
-    text-align: center;
+
+    &__main{
+        display: flex;
+        gap: 2rem;
+    }
 }
+
+.container{
+    width: 100%;
+
+    &__main{
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        color: white;
+    }
+
+    &__done{
+        margin-bottom: 2rem;
+    }
+
+    &__todo{
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: unset;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    margin: 20px 0;
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
 
 .form{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     margin-top: 1rem;
 }
 
-input, .btn{
-    padding: 1rem;
-    background-color: rgba(255, 255, 255, 0.87);
-    box-shadow: 5px 5px 1px hsla(271, 69%, 15%, 0.274);
-    border: none;
-    border-radius: 5px;
+textarea{
+    margin-bottom: 2rem;
+    resize: none;
 }
 
-input{
+input, textarea{
     width: 100%;
     position: relative;
-    text-align: right;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: unset;
+    box-shadow: 0px 0px 1px white;
+    border-radius: 5px;
+    color: white;
 
     &:focus{
-    outline: 2px solid rgb(76, 175, 107);
-    box-shadow: 3px 3px 18px hsla(271, 69%, 15%, 0.5);
+    box-shadow: 0px 0px 20px rgb(135, 206, 235, 0.5);
     }
 
     &::selection {
-        background: rgb(76, 175, 107);
+        background: skyblue;
         color: #fff;
     }
 }
 
-.label{
-    position: absolute;
-    top: -10px;
-    left: 4%;
-    z-index: 5;
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+
+label{
     color: white;
     font-size: 14px;
     padding: .3rem .5rem;
-    border-radius: 25px;
-
-    &--name{
-        background-color: tomato;
-    }
 }
 
 .input-wrapper {
@@ -65,35 +115,87 @@ input{
 }
 
 .btn{
+    text-align: center;
     margin-bottom: 2rem;
-    background-color: rgba(182, 250, 203, 0.747);
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     padding: 1rem 1.5rem;
-    transition: .3s all ease-in-out;
     cursor: pointer;
+    box-shadow: 0px 0px 1px white;
+    outline: 0px solid white;
+    transition: .2s all ease-in-out;
+
 
     &:hover{
-    background-color: rgba(54, 75, 61, 0.747);
+    outline: 1px solid white;
+    box-shadow: 0px 0px 10px rgb(135, 206, 235, 0.5);
     color: white;
     }   
 }
 
-h1, h2, h3{
+.title{
     text-transform: uppercase;
-}
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: white;
 
-h3{
-    font-size: 2em;
-    margin-bottom: 2rem;
-}
+    &--main{
+        text-align: right;
+    }
 
-h4{
-    font-size: 1.3em;
-}
+    &--container{
+        text-align: right;
+    }
 
+    &--done{
+        color: greenyellow;
+        margin-bottom: 2rem;
+    }
+}
 
 .hidden{
     display: none;
+}
+
+.blue{
+    color: skyblue;
+}
+
+
+.task{
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        box-shadow: 0px 0px 2px white;
+        border: 1px solid white;
+        transition: .2s all ease-in-out;
+
+        &:hover{
+            border: 1px solid white;
+            background-color: rgb(135, 206, 235, 0.2);
+            color: white;
+        } 
+    }
+
+    &__infos{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__container{
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    &__description{
+        padding: 0.5rem;
+    }
+}
+
+.checkbox{
+    margin-bottom: 0;
 }

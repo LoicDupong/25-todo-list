@@ -8,6 +8,38 @@
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    
+    <h1 class="title title--main">My<span class="blue">Tasks</span>List</h1>
+    <div class="wrapper wrapper__main">
+        <div class="container container__main">
+            <h2 class="title title--container">Task<span class="blue">Creator</span></h2>
+            <form action="" class="form">
+
+                <label for="task">Nom de la tâche</label>
+                <input type="text" name="task" id="task">
+                <label for="date">Date à laquelle la tâche doit être exécutée</label>
+                <input type="date" name="date" id="date">
+                <label for="description">Description de la tâche</label>
+                <textarea name="description" id="description" cols="30" rows="10" ></textarea>
+                <div class="btn btn--add">Ajouter</div>
+            </form>
+        </div>
+        <div class="container container__main">
+            <h2 class="title title--container">Task<span class="blue">List</span></h2>
+            <div class="container">
+                <div class="container__done">
+                    <h3 class="title title--done">Done</h3>
+                </div>
+
+                <div class="container">
+                    <h3 class="title">In The Tube</h3>
+                    <div class="btn btn--filter">Trier</div>
+                    <div class="container__todo">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </body>
 </html>
