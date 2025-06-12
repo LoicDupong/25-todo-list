@@ -31,7 +31,7 @@
 
 ## Démo
 
-[Lien vers la démo(https://loicdupong.github.io/25-todo-list/)]
+[Lien vers la démo](https://loicdupong.github.io/25-todo-list/)
 
 ---
 
