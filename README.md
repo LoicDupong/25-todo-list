@@ -37,4 +37,4 @@
 
 ## Auteur
 
-Projet réalisé dans le cadre d’un exercice personnel / formation front-end.
+Projet réalisé dans le cadre d’un exercice personnel / formation JS Fullstack
