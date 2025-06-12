@@ -48,6 +48,7 @@ function displayTodo(nom, date, description) {
     updateLists();
 }
 
+
 function updateLists() {
     toDoHTML.innerHTML = "";
     toDoTab.forEach((task, index) =>{
@@ -76,7 +77,7 @@ function updateLists() {
             <summary class="task__infos">
                 <div class="task__container">
                     <div class="task__check">
-                        <input type="checkbox" class="checkbox" name="checkbox">
+                        <input type="checkbox" class="checkbox" name="checkbox" checked>
                     </div>
                     <div class="task__name">${task.nom}</div>
                 </div>
@@ -113,7 +114,7 @@ toDoHTML.addEventListener('click', (e) => {
 
 doneHTML.addEventListener('click', (e) => {
     const checkbox = e.target.closest('.checkbox');
-    if (checkbox && checkbox.checked) {
+    if (checkbox) {
         const wrapper = checkbox.closest('details');
         const targetID = parseInt(wrapper.dataset.id, 10);
         if (!isNaN(targetID)) {
@@ -123,3 +124,8 @@ doneHTML.addEventListener('click', (e) => {
         }
     }
 });
+
+btnFilter.addEventListener('click', (e)=>{
+    toDoTab.sort((a, b) => new Date(a.date) - new Date(b.date));
+    updateLists();
+})
